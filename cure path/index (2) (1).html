@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cure Path Acupuncture | The Way to Wellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Styles with Animations */
+        :root {
+            --primary: #3a7d44;
+            --secondary: #f8f5f0;
+            --accent: #e8b75d;
+            --text: #2a2a2a;
+            --light: #ffffff;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Elements */
+        .bg-leaf {
+            position: fixed;
+            opacity: 0.1;
+            z-index: -1;
+            animation: float 15s infinite ease-in-out;
+        }
+        .bg-leaf:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            width: 150px;
+            animation-delay: 0s;
+        }
+        .bg-leaf:nth-child(2) {
+            top: 60%;
+            right: 8%;
+            width: 100px;
+            animation-delay: 2s;
+        }
+        .bg-leaf:nth-child(3) {
+            bottom: 15%;
+            left: 15%;
+            width: 120px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Header with Animation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(58, 125, 68, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        header.scrolled .logo,
+        header.scrolled .nav-links a {
+            color: var(--light);
+        }
+
+        header.scrolled .menu-toggle span {
+            background-color: var(--light);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section with Parallax */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('ChatGPT Image Sep 9, 2025, 02_43_02 PM.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--secondary));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn i {
+            margin-left: 8px;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.8rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-text ul {
+            margin: 2rem 0;
+            list-style-type: none;
+        }
+
+        .about-text ul li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .about-text ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: var(--light);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.2s; }
+        .stat-item:nth-child(2) { animation-delay: 0.4s; }
+        .stat-item:nth-child(3) { animation-delay: 0.6s; }
+        .stat-item:nth-child(4) { animation-delay: 0.8s; }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-info {
+            padding: 2rem;
+        }
+
+        .service-info h3 {
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .service-info p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.4rem;
+        }
+
+        .duration {
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary);
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .testimonials .section-title {
+            color: var(--light);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-card:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-card .quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            opacity: 0.2;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-card .author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            border: 3px solid var(--accent);
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Team Section */
+        .team {
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.5s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 5px solid var(--accent);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-info p {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .member-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .member-social a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section - Vibrant Design */
+        .contact {
+            background: linear-gradient(135deg, rgba(58, 125, 68, 0.1) 0%, rgba(248, 245, 240, 1) 100%);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            flex: 1;
+            background-color: var(--light);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .contact-details {
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+
+        .hours h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .hours p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hours p span {
+            font-weight: 600;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: var(--light);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .contact-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--secondary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(232, 183, 93, 0.2);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background-color: var(--accent);
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Map Section */
+        .map {
+            height: 400px;
+            margin-top: 5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 5rem 5% 2rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-col p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact i {
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-info, .contact-form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--light);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem 0;
+                transition: left 0.5s ease;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .service-card, .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                padding: 1.5rem;
+            }
+        }
+        /* Call popup styles */
+        .call-popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 1.5rem;
+        }
+
+        .call-popup {
+            background: var(--light);
+            color: var(--text);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            transform: translateY(12px);
+            animation: popupIn 220ms ease forwards;
+            position: relative;
+        }
+
+        @keyframes popupIn {
+            from { opacity: 0; transform: translateY(18px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .call-popup .number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+            color: var(--primary);
+        }
+
+        .call-popup .note {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 0.8rem;
+        }
+
+        .call-popup .call-actions { display:flex; gap:10px; justify-content:center; margin-top:6px; }
+        .call-popup .btn-call { background:var(--accent); color:var(--dark); padding:0.6rem 1rem; border-radius:8px; font-weight:700; text-decoration:none; }
+        .call-popup .btn-close { position:absolute; top:8px; right:10px; background:transparent; border:none; font-size:18px; cursor:pointer; color:#666; }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <img src="https://www.transparentpng.com/thumb/leaf/leaf-free-download-transparent-15.png" class="bg-leaf">
+    <img src="https://www.transparentpng.com/thumb/leaf/leaf-free-download-transparent-15.png" class="bg-leaf">
+    <img src="https://www.transparentpng.com/thumb/leaf/leaf-free-download-transparent-15.png" class="bg-leaf">
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">Cure <span>Path</span></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>The Way to Wellness</h1>
+            <p>At Cure Path, we blend ancient acupuncture techniques with modern care to restore balance and vitality to your life. Discover holistic healing tailored to your unique needs.</p>
+            <a href="#contact" class="btn">Book an Appointment <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+    <!-- Call Popup Overlay -->
+    <div class="call-popup-overlay" id="call-popup-overlay" aria-hidden="true">
+        <div class="call-popup" role="dialog" aria-modal="true" aria-labelledby="call-popup-title">
+            <button class="btn-close" id="call-popup-close" aria-label="Close">✕</button>
+            <div id="call-popup-title" style="font-weight:700; margin-bottom:6px; color:var(--primary);">Call Cure Path</div>
+            <div class="number" id="call-popup-number">07907120019</div>
+            <div class="note">use me for call</div>
+            <div class="call-actions">
+                <a href="tel:07907120019" class="btn-call">Call Now</a>
+                <a href="#contact" class="btn" id="call-popup-contact">Contact Page</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Healing Philosophy</h3>
+                <p>Welcome to Cure Path, your trusted acupuncture and Traditional Chinese Medicine (TCM) clinic in Kottayam, Kerala. Established in 2022, we are dedicated to providing natural, holistic healing therapies rooted in centuries-old Chinese medicine practices.</p>
+                <p>Located near the historic Thazhathangadi Juma Masjid, our clinic offers personalized treatments to restore balance, relieve pain, and enhance overall well-being. At Cure Path, we combine ancient wisdom with modern techniques to address various health concerns, including:</p>
+                
+                <h3>Why Choose Cure Path?</h3>
+                <ul>
+                    <li><strong>3+ years</strong> of combined clinical experience</li>
+                    <li><strong>Natural, drug-free</strong> pain and stress management</li>
+                    <li>Personalized <strong>whole-body wellness</strong> plans</li>
+                    <li>State-licensed <strong>master acupuncturists</strong></li>
+                    <li><strong>Proven results</strong> for chronic and acute conditions</li>
+                    <li><strong>Serene healing</strong> environment designed for relaxation</li>
+                </ul>
+
+                <a href="#services" class="btn" style="margin-top: 2rem;">Explore Our Services</a>
+            </div>
+            <div class="about-image">
+                <img src="b2e8e7dca2e2feb59434687bdcc41857.jpg" alt="Acupuncture treatment">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+   <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">
+                        <div class="icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        4+
+                    </div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">
+                        <div class="icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                         500+
+                    </div>
+                    <div class="stat-label">Happy Patients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">
+                        <div class="icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        20+
+                    </div>
+                    <div class="stat-label">Treatments Performed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">
+                        <div class="icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        99.9%
+                    </div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+            Each treatment at Cure Path is carefully customized to your unique constitution and health goals. 
+            Our comprehensive services work synergistically to restore balance and promote optimal wellness.
+        </p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="acupuncture-open-health.jpg" alt="Traditional Acupuncture">
+                </div>
+                <div class="service-info">
+                    <h3>Traditional Acupuncture</h3>
+                    <p>Fine, sterile needles stimulate specific meridian points to restore the harmonious flow of Qi (vital energy) throughout your body. Effective for pain relief, stress reduction, and systemic balance.</p>
+                    <div class="service-meta">
+                        
+                        <div class="duration">60-90 mins</div>
+                    </div>
+                    <a href="#contact" class="btn">Book Session</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="cuppingTherapy-1246919695-770x533-1_jpg.webp" alt="Cupping Therapy">
+                </div>
+                <div class="service-info">
+                    <h3>Cupping Therapy</h3>
+                    <p>Specialized cups create gentle suction to release muscle tension, improve circulation, and facilitate detoxification. Often combined with acupuncture for enhanced results.</p>
+                    <div class="service-meta">
+                        
+                        <div class="duration">45-60 mins</div>
+                    </div>
+                    <a href="#contact" class="btn">Book Session</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="electroacupuncture-in-denver-convert.io-1.webp" alt="Electro-Acupuncture">
+                </div>
+                <div class="service-info">
+                    <h3>Electro-Acupuncture</h3>
+                    <p>Gentle electrical pulses enhance needle stimulation, particularly effective for chronic pain conditions, neurological issues, and stubborn musculoskeletal imbalances.</p>
+                    <div class="service-meta">
+                        
+                        <div class="duration">60-75 mins</div>
+                    </div>
+                    <a href="#contact" class="btn">Book Session</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="985790_5813_2.webp" alt="Herbal Medicine">
+                </div>
+                <div class="service-info">
+                    <h3>Herbal Consultations</h3>
+                    <p>Custom herbal formulas complement your acupuncture treatments, addressing internal imbalances and supporting your body's healing processes between sessions.</p>
+                    <div class="service-meta">
+                       
+                        <div class="duration">30-45 mins</div>
+                    </div>
+                    <a href="#contact" class="btn">Book Consultation</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Moxibustion">
+                </div>
+                <div class="service-info">
+                    <h3>Moxibustion Therapy</h3>
+                    <p>The warming energy of mugwort stimulates acupuncture points, especially beneficial for cold conditions, poor circulation, and boosting immune function.</p>
+                    <div class="service-meta">
+                       
+                        <div class="duration">45-60 mins</div>
+                    </div>
+                    <a href="#contact" class="btn">Book Session</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wellness Package">
+                </div>
+                <div class="service-info">
+                    <h3>Wellness Packages</h3>
+                    <p>Customized treatment series designed for comprehensive care, offering the best value for patients committed to long-term health transformation.</p>
+                    <div class="service-meta">
+                       
+                        <div class="duration">5-10 sessions</div>
+                    </div>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <h2 class="section-title">Meet Healer Muhammed Ashraf </h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+           The Expert in Athletic Performance & Injury Recovery
+        </p>
+       
+            
+            <div class="team-member">
+                <div class="member-info">
+                    <h3>Muhammed Ashraf</h3>
+                    <p>Acupuncturist</p>
+                    <p>A renowned acupuncturist and sports medicine specialist, Dr. Muhammed Ashraf seamlessly blends traditional acupuncture techniques with cutting-edge sports science to optimize athletic performance and accelerate injury recovery.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i> </a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Patient Stories</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="quote">I went to here with my mom who has dealt with severe back pain and various other issues. The therapist does a combination of acupuncture and cupping for her and she feels like a new person after his treatment . My mom is so great full for the treatment, thank you for dedicating so much of your time to helping people.</p>
+                <div class="author">
+                    <img src="unnamed.png" alt="Sarah J.">
+                    <div class="author-info">
+                        <h4>NaJMudeeN RawtheR.</h4>
+                        <p>Chronic Migraine Patient</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">Dr Ashraf intuitive. Once you explain your problems, then he takes over expertly treating you. Results appear within a few sittings. Always ready to explain anything in detail. You rest assured that you are in good hands.</p>
+                <div class="author">
+                    <img src="unnamed (2).png" alt="Michael T.">
+                    <div class="author-info">
+                        <h4>SHUNGWAYA WELFARE AS</h4>
+                        <p>Professional WELFARE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">എനിക്ക് നന്നായി ഇഷ്ട്ടപെട്ടു, നടുവിന് വേദനയായിരുന്നു. ഉള്ളിലേക്ക് മരുന്നോ ഇൻജെക്ഷൻ ഇല്ലാതെ തന്നെ എന്റെ വേദനയെല്ലാം മാറ്റിത്തന്നു. അതും ആദ്യത്തെ പരിശോധനയിൽ തന്നെ ഇപ്പോൾ ഞാൻ happy ആണ്. എന്നെ പരിചയമുള്ളവർക്ക് ഞാൻ ഈ ഒരു ട്രീറ്റ്‌ മെന്റ് പറഞ്ഞു കൊടുക്കും</p>
+                <div class="author">
+                    <img src="unnamed (3).png" alt="Priya K.">
+                    <div class="author-info">
+                        <h4>Bino Raj.</h4>
+                        <p>Digestive Wellness Patient</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Begin Your Wellness Journey</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Visit Our Clinic</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <a href="https://www.google.com/maps/place/Cure+Path+Acupuncture/@9.5975823,76.5034092,16z/data=!4m6!3m5!1s0x3b062bfb2292ea5f:0xd9af285a9b75aefd!8m2!3d9.5988676!4d76.5050078!16s%2Fg%2F11svglz5ph?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="display:flex; text-decoration:none; color:inherit;">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>near Thazhathangady Juma Masjid, Kummanam, Kottayam, Kerala 686005</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contact-item" id="call-us-item" style="cursor:pointer;">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <a href="tel:07907120019">07907120019</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <a href="https://mail.google.com/chat/u/0/#chat/home" target="_blank" title="Chat with Cure Path on Google Chat" style="color:inherit;">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:curepathacupunture@gmail.com">curepathacupunture@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hours">
+                    <h4>Clinic Hours</h4>
+                    <p><span>Monday - Friday:</span> 08:30 AM - 12:00 PM ,2:00 - 06:30 </p>
+                    <p><span>Saturday:</span>  08:30 AM - 12:00 PM ,2:00 - 06:30</p>
+                    <p><span>Sunday:</span> Closed</p>
+                </div>
+                <div class="social-links" style="margin-top: 2rem; justify-content: flex-start;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Book an Appointment</h3>
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In *</label>
+                        <select id="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="acupuncture">Traditional Acupuncture</option>
+                            <option value="cupping">Cupping Therapy</option>
+                            <option value="electro">Electro-Acupuncture</option>
+                            <option value="herbal">Herbal Consultation</option>
+                            <option value="moxibustion">Moxibustion Therapy</option>
+                            <option value="package">Wellness Package</option>
+                            <option value="other">Other/Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-date">Preferred Date</label>
+                        <input type="date" id="preferred-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Health Concerns *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Request Appointment <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="Screenshot 2025-09-09 122608.png" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <!-- Reviews and Comments Section -->
+    <section id="reviews" class="reviews-section" style="background-color: var(--secondary); padding: 6rem 5%;">
+        <h2 class="section-title">Patient Reviews</h2>
+        
+        <!-- Review Form -->
+        <div class="review-form" style="background-color: var(--light); padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); max-width: 800px; margin: 0 auto 4rem;">
+            <h3 style="color: var(--primary); margin-bottom: 2rem; font-size: 1.8rem; text-align: center;">Share Your Experience</h3>
+            <form id="reviewForm">
+                <div class="form-group" style="margin-bottom: 1.8rem;">
+                    <label for="reviewerName" style="display: block; margin-bottom: 0.8rem; font-weight: 600; color: var(--primary);">Your Name</label>
+                    <input type="text" id="reviewerName" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background-color: var(--secondary);">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.8rem;">
+                    <label style="display: block; margin-bottom: 0.8rem; font-weight: 600; color: var(--primary);">Your Rating</label>
+                    <div class="rating-input" style="display: flex; justify-content: center; margin-bottom: 2rem; gap: 0.5rem;">
+                        <input type="radio" id="star1" name="rating" value="1" style="display: none;">
+                        <label for="star5" style="font-size: 2rem; color: #dddddd8e; cursor: pointer; transition: color 0.2s;"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2" style="display: none;">
+                        <label for="star4" style="font-size: 2rem; color: #dddddd8f; cursor: pointer; transition: color 0.2s;"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3" style="display: none;">
+                        <label for="star3" style="font-size: 2rem; color: #dddddd9a; cursor: pointer; transition: color 0.2s;"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4" style="display: none;">
+                        <label for="star2" style="font-size: 2rem; color: hsla(0, 4%, 85%, 0.664); cursor: pointer; transition: color 0.2s;"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star5" name="rating" value="5" style="display: none;">
+                        <label for="star1" style="font-size: 2rem; color: hwb(0 100% 0% / 0.562); cursor: pointer; transition: color 0.2s;"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.8rem;">
+                    <label for="reviewText" style="display: block; margin-bottom: 0.8rem; font-weight: 600; color: var(--primary);">Your Review</label>
+                    <textarea id="reviewText" rows="5" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background-color: var(--secondary); height: 150px;"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" style="width: 100%; padding: 1.2rem; background-color: var(--accent); color: var(--dark); font-weight: 700; font-size: 1.1rem; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
+            </form>
+        </div>
+
+        <!-- Reviews Display -->
+        <div class="review-comments" style="margin-top: 4rem;">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">What Our Patients Say</h3>
+            
+            <div id="reviewsContainer">
+                <!-- Sample Reviews -->
+                <div class="review-card" style="background-color: var(--light); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="review-header" style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <span class="review-author" style="font-weight: 600; color: var(--primary);">ashwin</span>
+                        <span class="review-date" style="color: #777; font-size: 0.9rem;">March 15, 2023</span>
+                    </div>
+                    <div class="review-rating" style="color: var(--accent); margin-bottom: 0.5rem;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-content" style="line-height: 1.6;">
+                        <p>healer ashraf's acupuncture treatments have completely transformed my chronic migraines. After just 12 sittings, my headache frequency reduced by 93%,nice.</p>
+                    </div>
+                </div>
+
+                <div class="review-card" style="background-color: var(--light); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="review-header" style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <span class="review-author" style="font-weight: 600; color: var(--primary);">mohan</span>
+                        <span class="review-date" style="color: #777; font-size: 0.9rem;">February 28, 2023</span>
+                    </div>
+                    <div class="review-rating" style="color: var(--accent); margin-bottom: 0.5rem;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="review-content" style="line-height: 1.6;">
+                        <p>Excellent experience at Cure Path. The herbal consultation with praveen helped address my digestion issues naturally. The clinic has a very calming atmosphere that enhances the healing process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Cure Path</h3>
+                <p>The Way to Wellness begins with your first step. We're honored to be part of your healing journey.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.google.com/maps/place/Cure+Path+Acupuncture/@9.598958,76.5049751,3a,90y,193.28h,85.73t/data=!3m7!1e1!3m5!1sKCita7Y9eahxjFWqi8aF9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.2713876246478435%26panoid%3DKCita7Y9eahxjFWqi8aF9g%26yaw%3D193.2845311741553!7i13312!8i6656!4m19!1m9!3m8!1s0x3b062bfb2292ea5f:0xd9af285a9b75aefd!2sCure+Path+Acupuncture!8m2!3d9.5988676!4d76.5050078!9m1!1b1!16s%2Fg%2F11svglz5ph!3m8!1s0x3b062bfb2292ea5f:0xd9af285a9b75aefd!8m2!3d9.5988676!4d76.5050078!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11svglz5ph?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"><i class="fab fa-yelp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Traditional Acupuncture</a></li>
+                    <li><a href="#">Cupping Therapy</a></li>
+                    <li><a href="#">Electro-Acupuncture</a></li>
+                    <li><a href="#">Herbal Medicine</a></li>
+                    <li><a href="#">Moxibustion</a></li>
+                    <li><a href="#">Wellness Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> near Thazhathangady Juma Masjid, Kummanam, Kottayam, Kerala 686005</p>
+                    <p><i class="fas fa-phone-alt"></i> 07907120019</p>
+                    <p><i class="fas fa-envelope"></i> curepathacupunture@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Cure Path Acupuncture Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('active', window.scrollY > 300);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // LocalStorage helpers
+        function getStoredReviews() {
+            try { return JSON.parse(localStorage.getItem('reviews') || '[]'); } catch (e) { return []; }
+        }
+
+        function getStoredAppointments() {
+            try { return JSON.parse(localStorage.getItem('appointments') || '[]'); } catch (e) { return []; }
+        }
+
+        function saveReviewObj(obj) {
+            const arr = getStoredReviews();
+            arr.push(obj);
+            localStorage.setItem('reviews', JSON.stringify(arr));
+            renderStoredReviews();
+            renderAdminLists();
+        }
+
+        function saveAppointmentObj(obj) {
+            const arr = getStoredAppointments();
+            arr.push(obj);
+            localStorage.setItem('appointments', JSON.stringify(arr));
+            renderAdminLists();
+        }
+
+        // Render stored reviews on public page (keeps sample static reviews and appends stored ones)
+        function renderStoredReviews() {
+            const container = document.getElementById('reviewsContainer');
+            if (!container) return;
+
+            let wrapper = document.getElementById('stored-reviews');
+            if (!wrapper) {
+                wrapper = document.createElement('div');
+                wrapper.id = 'stored-reviews';
+                // place after existing sample reviews
+                container.appendChild(wrapper);
+            }
+
+            const reviews = getStoredReviews();
+            if (!reviews.length) {
+                wrapper.innerHTML = '';
+                return;
+            }
+
+            wrapper.innerHTML = reviews.map((r, i) => `
+                <div class="review-card" style="background-color: var(--light); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="review-header" style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <span class="review-author" style="font-weight: 600; color: var(--primary);">${escapeHtml(r.name || 'Anonymous')}</span>
+                        <span class="review-date" style="color: #777; font-size: 0.9rem;">${escapeHtml(r.date || '')}</span>
+                    </div>
+                    <div class="review-rating" style="color: var(--accent); margin-bottom: 0.5rem;">
+                        ${renderStars(r.rating)}
+                    </div>
+                    <div class="review-content" style="line-height: 1.6;">
+                        <p>${escapeHtml(r.text || '')}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Utility: simple escape to avoid injecting HTML
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>"'`]/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;","`":"&#96;"})[s]);
+        }
+
+        function renderStars(value) {
+            const v = Number(value) || 0;
+            let out = '';
+            for (let i = 0; i < 5; i++) {
+                out += i < v ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+            }
+            return out;
+        }
+
+        // Admin rendering
+        function renderAdminLists() {
+            const reviews = getStoredReviews();
+            const appointments = getStoredAppointments();
+
+            const reviewContainer = document.getElementById('reviews-list');
+            const appointmentsContainer = document.getElementById('appointments-list');
+
+            if (reviewContainer) {
+                if (!reviews.length) reviewContainer.innerHTML = '<p>No reviews yet.</p>';
+                else reviewContainer.innerHTML = reviews.map((r, i) => `
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+                        <div style="flex:1;">
+                            <strong>${escapeHtml(r.name || 'Anonymous')}</strong> <small style="color:#666;">${escapeHtml(r.date || '')}</small>
+                            <div style="margin-top:4px;">${renderStars(r.rating)}</div>
+                            <div style="color:#333; margin-top:6px;">${escapeHtml(r.text || '')}</div>
+                        </div>
+                        <div><button data-index="${i}" class="admin-del-review" style="background:#e74c3c;color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer;">Delete</button></div>
+                    </div>
+                `).join('');
+
+                // attach delete handlers
+                reviewContainer.querySelectorAll('.admin-del-review').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = Number(btn.getAttribute('data-index'));
+                        deleteReview(idx);
+                    });
+                });
+            }
+
+            if (appointmentsContainer) {
+                if (!appointments.length) appointmentsContainer.innerHTML = '<p>No appointments yet.</p>';
+                else appointmentsContainer.innerHTML = appointments.map((a, i) => `
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+                        <div style="flex:1;">
+                            <strong>${escapeHtml(a.name || 'Unknown')}</strong> <small style="color:#666;">${escapeHtml(a.dateSubmitted || '')}</small>
+                            <div style="margin-top:4px; color:#333;">${escapeHtml(a.service || '')} — ${escapeHtml(a.preferredDate || '')}</div>
+                            <div style="color:#333; margin-top:6px;">${escapeHtml(a.phone || '')} • ${escapeHtml(a.email || '')}</div>
+                        </div>
+                        <div><button data-index="${i}" class="admin-del-appt" style="background:#e74c3c;color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer;">Delete</button></div>
+                    </div>
+                `).join('');
+
+                appointmentsContainer.querySelectorAll('.admin-del-appt').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = Number(btn.getAttribute('data-index'));
+                        deleteAppointment(idx);
+                    });
+                });
+            }
+        }
+
+        function deleteReview(index) {
+            const arr = getStoredReviews();
+            if (index < 0 || index >= arr.length) return;
+            arr.splice(index, 1);
+            localStorage.setItem('reviews', JSON.stringify(arr));
+            renderStoredReviews();
+            renderAdminLists();
+        }
+
+        function deleteAppointment(index) {
+            const arr = getStoredAppointments();
+            if (index < 0 || index >= arr.length) return;
+            arr.splice(index, 1);
+            localStorage.setItem('appointments', JSON.stringify(arr));
+            renderAdminLists();
+        }
+
+        // Form Submission (store locally so admin can view)
+        const form = document.getElementById('appointment-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const obj = {
+                name: document.getElementById('name').value || '',
+                email: document.getElementById('email').value || '',
+                phone: document.getElementById('phone').value || '',
+                service: document.getElementById('service').value || '',
+                preferredDate: document.getElementById('preferred-date').value || '',
+                message: document.getElementById('message').value || '',
+                dateSubmitted: new Date().toLocaleString()
+            };
+            saveAppointmentObj(obj);
+            alert('Thank you! Your appointment request has been saved locally. The admin can view it in the admin panel.');
+            form.reset();
+        });
+
+        // Review Form Submission
+        const reviewForm = document.getElementById('reviewForm');
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const reviewerName = document.getElementById('reviewerName').value || 'Anonymous';
+            const reviewText = document.getElementById('reviewText').value || '';
+            const ratingInput = document.querySelector('.rating-input input:checked');
+            const rating = ratingInput ? ratingInput.value : 0;
+            const obj = { name: reviewerName, text: reviewText, rating: rating, date: new Date().toLocaleString() };
+            saveReviewObj(obj);
+            alert('Thank you for your review! It has been saved locally and is visible to the admin.');
+            reviewForm.reset();
+        });
+
+        // Initialize render on load
+        renderStoredReviews();
+        renderAdminLists();
+
+        // Animated Counter for Stats
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Initialize counters with data-target attributes
+        document.querySelectorAll('.stat-number')[0].setAttribute('data-target', '4');
+        document.querySelectorAll('.stat-number')[1].setAttribute('data-target', '500');
+        document.querySelectorAll('.stat-number')[2].setAttribute('data-target', '20');
+        document.querySelectorAll('.stat-number')[3].setAttribute('data-target', '99.9');
+
+        // Start counter animation when stats section is in view
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(statsSection);
+
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.service-card, .team-member, .testimonial-card');
+        const animateObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                    animateObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animateElements.forEach(element => {
+            element.style.opacity = '0';
+            animateObserver.observe(element);
+        });
+
+        // Star rating interaction
+        const starInputs = document.querySelectorAll('.rating-input input');
+        starInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const ratingValue = input.value;
+                const stars = document.querySelectorAll('.rating-input label');
+                
+                stars.forEach((star, index) => {
+                    if (index < ratingValue) {
+                        star.style.color = '#ffc107';
+                    } else {
+                        star.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+
+        // Call popup handlers
+        (function(){
+            const callItem = document.getElementById('call-us-item');
+            const overlay = document.getElementById('call-popup-overlay');
+            const closeBtn = document.getElementById('call-popup-close');
+
+            if(!callItem || !overlay) return;
+
+            function openPopup(){ overlay.style.display = 'flex'; overlay.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; }
+            function closePopup(){ overlay.style.display = 'none'; overlay.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+
+            callItem.addEventListener('click', (e)=>{ e.preventDefault(); openPopup(); });
+            closeBtn.addEventListener('click', closePopup);
+
+            // close when clicking outside the box
+            overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closePopup(); });
+
+            // close on Escape
+            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePopup(); });
+        })();
+    </script>
+                <!-- Admin Dashboard Overlay -->
+                <div id="admin-lock" title="Admin" style="position: fixed; top: 18px; right: 18px; z-index:2000; width:44px; height:44px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,0.12); cursor:pointer;">
+                        <i class="fas fa-user-shield" style="color:#2c3e50;"></i>
+                </div>
+
+                <!-- Password Modal -->
+                <div id="admin-pass-modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; justify-content: center; align-items: center; z-index:2001;">
+                    <div style="background: white; padding: 22px; border-radius: 10px; text-align: center; width:360px;">
+                        <h3 style="margin-bottom:8px;">Admin Login</h3>
+                        <p style="color:#666; margin-bottom:12px;">Enter your admin password to continue</p>
+                        <input type="password" id="admin-pass-input" placeholder="Password" style="width:100%; padding:10px; margin-bottom:12px; border:1px solid #e0e0e0; border-radius:6px;">
+                        <div style="display:flex; gap:8px; justify-content:center;">
+                            <button id="admin-pass-login" class="btn btn-primary">Login</button>
+                            <button id="admin-pass-cancel" class="btn btn-outline">Cancel</button>
+                        </div>
+                        <p id="admin-pass-error" style="color:red; display:none; margin-top:10px;">Incorrect password</p>
+                    </div>
+                </div>
+
+                <!-- Admin Dashboard (hidden until login) -->
+                <div class="admin-dashboard" id="admin-dashboard" style="display:none; position:fixed; inset:0; z-index:2002; background: linear-gradient(180deg,#071026,#0b1220);">
+                    <style>
+                        .admin-dashboard * { box-sizing: border-box; }
+                        .admin-dashboard :root { --primary: #2dd4bf; --secondary: #06b6d4; --accent:#60a5fa; --danger:#f43f5e; --dark:#071026; --surface:#0b1622; --muted: rgba(255,255,255,0.7); --sidebar-width:260px; --header-height:70px; }
+                        /* Dark themed backdrop for the admin area */
+                        .admin-dashboard { color: #ffffff; }
+                        .admin-dashboard .sidebar { width: var(--sidebar-width); background: linear-gradient(180deg, var(--primary), var(--secondary)); color: #fff; height: 100vh; position: fixed; left:0; top:0; padding-top:20px; z-index:2100; }
+                        .admin-dashboard .sidebar-header { padding: 20px; text-align:center; }
+                        .admin-dashboard .sidebar-menu { padding: 10px 0; }
+                        .admin-dashboard .sidebar-menu ul { list-style:none; padding:0 10px; }
+                        .admin-dashboard .sidebar-menu li { padding:12px 10px; margin:6px 0; cursor:pointer; display:flex; gap:10px; align-items:center; border-radius:6px; color:#ffffff; }
+                        .admin-dashboard .sidebar-menu li.active { background: rgba(255,255,255,0.06); }
+                        .admin-dashboard .main-content { margin-left: var(--sidebar-width); height:100vh; display:flex; flex-direction:column; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.14)); }
+                        .admin-dashboard .header { height: var(--header-height); background: transparent; display:flex; align-items:center; justify-content:space-between; padding:0 20px; box-shadow: none; }
+                        .admin-dashboard .content { padding:20px; overflow:auto; }
+                        .admin-dashboard .dashboard-cards { display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
+                        /* stronger, darker surfaces for better contrast */
+                        .admin-dashboard .card { background: #071826; border-radius:10px; padding:16px; box-shadow:0 6px 18px rgba(2,6,23,0.6); color: #ffffff; }
+                        .admin-dashboard .card small, .admin-dashboard .card div { color: rgba(255,255,255,0.85); }
+                        .admin-dashboard .password-section { margin-top:18px; background: #071826; padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(2,6,23,0.6); color:#ffffff; }
+                        .admin-dashboard .btn { padding:8px 12px; border-radius:6px; cursor:pointer; }
+                        .admin-dashboard .btn-primary { background: linear-gradient(45deg,var(--accent),var(--secondary)); color:#fff; border:none; }
+                        .admin-dashboard .btn-outline { background:transparent; border:1px solid rgba(255,255,255,0.12); color:#ffffff; }
+                        .admin-dashboard .close-admin { position:absolute; top:12px; right:12px; background: rgba(255,255,255,0.04); color:#ffffff; border-radius:6px; padding:6px 8px; box-shadow:0 4px 12px rgba(0,0,0,0.4); cursor:pointer; }
+                        .admin-dashboard .lists { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+                        .admin-dashboard .list-box { background: #071826; padding:12px; border-radius:8px; max-height:40vh; overflow:auto; color:#ffffff; }
+                        .admin-dashboard h3, .admin-dashboard h4, .admin-dashboard label { color:#e6f0ff; }
+                        .admin-dashboard small { color: rgba(255,255,255,0.8); }
+                        /* Inputs styling for dark theme */
+                        .admin-dashboard input[type=password], .admin-dashboard input[type=text], .admin-dashboard input { background: rgba(255,255,255,0.02); color: #fff; border:1px solid rgba(255,255,255,0.06); padding:8px; border-radius:6px; }
+                        .admin-dashboard .adm-del-rev, .admin-dashboard .adm-del-appt { background:#ef4444; color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer; }
+                        @media (max-width:900px) { .admin-dashboard .sidebar { display:none; } .admin-dashboard .main-content { margin-left:0; } .admin-dashboard .lists{grid-template-columns:1fr;} }
+                    </style>
+
+                    <div class="sidebar">
+                        <div class="sidebar-header"><h6 style="margin:0;">SecureAdmin</h6></div>
+                        <div class="sidebar-menu"><ul>
+                            <li class="active"><i class="fas fa-home"></i>&nbsp;Dashboard</li>
+                            <li id="admin-users-link"><i class="fas fa-user"></i>&nbsp;Users</li>
+                            <li id="admin-security-link"><i class="fas fa-shield-alt"></i>&nbsp;Security</li>
+                            <li id="admin-logout-link"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</li>
+                        </ul></div>
+                    </div>
+
+                    <div class="main-content">
+                        <div class="header">
+                            <div class="header-left"><h2 style="color:var(--primary); margin:0;">Admin Dashboard</h2></div>
+                            <div class="header-right" style="display:flex; gap:12px; align-items:center;">
+                                <div style="font-size:18px; color:var(--gray);">Admin</div>
+                                <div class="close-admin" id="admin-close" title="Close">✕</div>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <div class="dashboard-cards">
+                                    <div class="card"><div style="font-size:13px;color:var(--gray)">Total Reviews</div><div id="card-reviews" style="font-size:20px;font-weight:700;">0</div></div>
+                                    <div class="card"><div style="font-size:13px;color:var(--gray)">Total Appointments</div><div id="card-appts" style="font-size:20px;font-weight:700;">0</div></div>
+                                    <div class="card"><div style="font-size:13px;color:var(--gray)">Visitors (All time)</div><div id="card-visits" style="font-size:20px;font-weight:700;">—</div></div>
+                                    <div class="card"><div style="font-size:13px;color:var(--gray)">Local Storage</div><div id="card-ls" style="font-size:20px;font-weight:700;">—</div></div>
+                                    <div class="card"><div style="font-size:13px;color:var(--gray)">Last Login</div><div id="card-last" style="font-size:20px;font-weight:700;">—</div></div>
+                            </div>
+
+                            <div class="lists" style="margin-top:14px;">
+                                <div class="list-box">
+                                    <h4 style="margin-top:0;">Reviews</h4>
+                                    <div id="admin-reviews-list">(loading...)</div>
+                                </div>
+                                <div class="list-box">
+                                    <h4 style="margin-top:0;">Appointments</h4>
+                                    <div id="admin-appts-list">(loading...)</div>
+                                </div>
+                            </div>
+
+                            <div class="password-section">
+                                <h3 style="margin-top:0;">Password Management</h3>
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
+                                    <div>
+                                        <label>Current Password</label>
+                                        <input type="password" id="adm-current-password" style="width:100%; padding:8px; margin-top:6px; border:1px solid #e0e0e0; border-radius:6px;">
+                                    </div>
+                                    <div>
+                                        <label>New Password</label>
+                                        <input type="password" id="adm-new-password" style="width:100%; padding:8px; margin-top:6px; border:1px solid #e0e0e0; border-radius:6px;">
+                                        <div class="password-strength" style="height:6px; background:#eee; border-radius:6px; margin-top:6px; overflow:hidden;"><div id="adm-strength" style="height:100%; width:0"></div></div>
+                                    </div>
+                                </div>
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
+                                    <div>
+                                        <label>Confirm Password</label>
+                                        <input type="password" id="adm-confirm-password" style="width:100%; padding:8px; margin-top:6px; border:1px solid #e0e0e0; border-radius:6px;">
+                                    </div>
+                                    <div style="display:flex; align-items:end; justify-content:flex-end;"><button id="adm-update-pass" class="btn btn-primary">Update Password</button></div>
+                                </div>
+                                <div id="adm-pass-msg" style="margin-top:10px; color:var(--danger); display:none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    (function(){
+                        // Use localStorage to persist admin password (default 'admin123')
+                        const LS_KEY = 'admin_password';
+                        function getStoredAdminPass(){ return localStorage.getItem(LS_KEY) || 'admin123'; }
+                        function setStoredAdminPass(p){ localStorage.setItem(LS_KEY, p); }
+
+                        const lock = document.getElementById('admin-lock');
+                        const modal = document.getElementById('admin-pass-modal');
+                        const input = document.getElementById('admin-pass-input');
+                        const loginBtn = document.getElementById('admin-pass-login');
+                        const cancelBtn = document.getElementById('admin-pass-cancel');
+                        const err = document.getElementById('admin-pass-error');
+                        const dashboard = document.getElementById('admin-dashboard');
+                        const closeBtn = document.getElementById('admin-close');
+                        const logoutLink = document.getElementById('admin-logout-link');
+
+                        lock.addEventListener('click', ()=>{ modal.style.display='flex'; input.value=''; input.focus(); err.style.display='none'; });
+                        cancelBtn.addEventListener('click', ()=>{ modal.style.display='none'; });
+
+                        function openDashboard(){ modal.style.display='none'; dashboard.style.display='block'; renderAdminPanel(); }
+
+                        loginBtn.addEventListener('click', ()=>{
+                            const val = input.value || '';
+                            if(val === getStoredAdminPass()){ openDashboard(); } else { err.style.display='block'; }
+                        });
+                        input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') loginBtn.click(); });
+
+                        closeBtn.addEventListener('click', ()=>{ dashboard.style.display='none'; });
+                        logoutLink.addEventListener('click', ()=>{ dashboard.style.display='none'; });
+
+                        // Populate dashboard cards and lists by reusing existing storage helpers
+                        function renderAdminPanel(){
+                            const reviews = getStoredReviews();
+                            const appts = getStoredAppointments();
+                            document.getElementById('card-reviews').innerText = reviews.length;
+                            document.getElementById('card-appts').innerText = appts.length;
+                            document.getElementById('card-ls').innerText = (localStorage.length || 0);
+                            document.getElementById('card-last').innerText = new Date().toLocaleString();
+
+                            // fill review list
+                            const rl = document.getElementById('admin-reviews-list');
+                            rl.innerHTML = reviews.length ? reviews.map((r,i)=>{
+                                return `<div style="border-bottom:1px solid #eee;padding:8px 0"><strong>${escapeHtml(r.name||'Anonymous')}</strong> <small style="color:#666">${escapeHtml(r.date||'')}</small><div style="margin-top:6px">${escapeHtml(r.text||'')}</div><div style="margin-top:6px"><button data-i="${i}" class="adm-del-rev" style="background:#e74c3c;color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer;">Delete</button></div></div>`;
+                            }).join('') : '<div>No reviews</div>';
+
+                            const al = document.getElementById('admin-appts-list');
+                            al.innerHTML = appts.length ? appts.map((a,i)=>{
+                                return `<div style="border-bottom:1px solid #eee;padding:8px 0"><strong>${escapeHtml(a.name||'Unknown')}</strong> <small style="color:#666">${escapeHtml(a.dateSubmitted||'')}</small><div style="margin-top:6px">${escapeHtml(a.service||'')} • ${escapeHtml(a.preferredDate||'')}</div><div style="margin-top:6px">${escapeHtml(a.phone||'')} • ${escapeHtml(a.email||'')}</div><div style="margin-top:6px"><button data-i="${i}" class="adm-del-appt" style="background:#e74c3c;color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer;">Delete</button></div></div>`;
+                            }).join('') : '<div>No appointments</div>';
+
+                            // attach delete handlers
+                            document.querySelectorAll('.adm-del-rev').forEach(btn=>btn.addEventListener('click', ()=>{ deleteReview(Number(btn.getAttribute('data-i'))); renderAdminPanel(); renderStoredReviews(); }));
+                            document.querySelectorAll('.adm-del-appt').forEach(btn=>btn.addEventListener('click', ()=>{ deleteAppointment(Number(btn.getAttribute('data-i'))); renderAdminPanel(); }));
+                        }
+
+                        // Password update logic
+                        const currPassInput = document.getElementById('adm-current-password');
+                        const newPassInput = document.getElementById('adm-new-password');
+                        const confirmPassInput = document.getElementById('adm-confirm-password');
+                        const updateBtn = document.getElementById('adm-update-pass');
+                        const passMsg = document.getElementById('adm-pass-msg');
+                        const strengthBar = document.getElementById('adm-strength');
+
+                        function calcStrength(p){ let s=0; if(p.length>=8) s++; if(/[A-Z]/.test(p)) s++; if(/[a-z]/.test(p)) s++; if(/[0-9]/.test(p)) s++; if(/[^A-Za-z0-9]/.test(p)) s++; return s; }
+                        newPassInput.addEventListener('input', ()=>{ const s=calcStrength(newPassInput.value); strengthBar.style.width = (s/5*100)+'%'; if(s<=2) strengthBar.style.background='#f72585'; else if(s<=4) strengthBar.style.background='#f8961e'; else strengthBar.style.background='#2ecc71'; });
+
+                        function clearPassMsg(){ passMsg.style.display='none'; passMsg.innerText=''; }
+
+                        updateBtn.addEventListener('click', ()=>{
+                            clearPassMsg();
+                            const curr = currPassInput.value || '';
+                            const np = newPassInput.value || '';
+                            const cp = confirmPassInput.value || '';
+                            if(curr !== getStoredAdminPass()){ passMsg.style.display='block'; passMsg.innerText='Current password is incorrect.'; return; }
+                            if(np.length<8){ passMsg.style.display='block'; passMsg.innerText='New password must be at least 8 characters.'; return; }
+                            if(np !== cp){ passMsg.style.display='block'; passMsg.innerText='Passwords do not match.'; return; }
+                            setStoredAdminPass(np); passMsg.style.display='block'; passMsg.style.color='green'; passMsg.innerText='Password updated.'; currPassInput.value=''; newPassInput.value=''; confirmPassInput.value=''; strengthBar.style.width='0%';
+                        });
+
+                        // Security link: open dashboard and focus password management
+                        const adminSecurityLink = document.getElementById('admin-security-link');
+                        if(adminSecurityLink){
+                            adminSecurityLink.addEventListener('click', ()=>{
+                                adminIntent = 'security';
+                                if(dashboard.style.display !== 'block'){
+                                    modal.style.display = 'flex';
+                                    input.value = '';
+                                    input.focus();
+                                    return;
+                                }
+                                const passSection = document.querySelector('.password-section');
+                                if(passSection){
+                                    passSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    setTimeout(()=>{ currPassInput.focus(); }, 400);
+                                }
+                            });
+                        }
+
+                    })();
+                </script>
+                <script>
+                    // Visitor counter integration with localStorage fallback.
+                    (function(){
+                        const API_BASE = 'http://localhost:3000';
+                        const VISIT_LS_KEY = '__visits_local_fallback__';
+
+                        function readLocal(){
+                            return Number(localStorage.getItem(VISIT_LS_KEY) || 0);
+                        }
+                        function writeLocal(n){ localStorage.setItem(VISIT_LS_KEY, String(n)); }
+
+                        async function incServer(){
+                            const res = await fetch(API_BASE + '/visit', { method: 'POST' });
+                            if(!res.ok) throw new Error('server-error');
+                            return res.json();
+                        }
+                        async function getServer(){
+                            const res = await fetch(API_BASE + '/visits');
+                            if(!res.ok) throw new Error('server-error');
+                            return res.json();
+                        }
+
+                        async function incAndShow(){
+                            const badgeEl = ensureBadge();
+                            // try server first
+                            try{
+                                await incServer();
+                                const data = await getServer();
+                                setVisitsDisplay((typeof data.count === 'number') ? data.count : '—');
+                                badgeEl.innerText = 'server';
+                                badgeEl.style.background = '#2ecc71';
+                                return;
+                            }catch(e){
+                                // server unreachable: fallback to local
+                            }
+
+                            // local fallback: increment per-browser
+                            const current = readLocal();
+                            const next = current + 1;
+                            writeLocal(next);
+                            setVisitsDisplay(next + ' (local)');
+                            badgeEl.innerText = 'local'; badgeEl.style.background = '#f39c12';
+                        }
+
+                        function setVisitsDisplay(v){ const el = document.getElementById('card-visits'); if(el) el.innerText = v; }
+
+                        function ensureBadge(){
+                            let b = document.getElementById('__visits_badge');
+                            if(b) return b;
+                            b = document.createElement('div');
+                            b.id = '__visits_badge';
+                            b.style.position = 'fixed';
+                            b.style.right = '14px';
+                            b.style.bottom = '14px';
+                            b.style.padding = '8px 10px';
+                            b.style.borderRadius = '8px';
+                            b.style.color = '#fff';
+                            b.style.fontWeight = '700';
+                            b.style.fontSize = '12px';
+                            b.style.zIndex = 99999;
+                            b.style.boxShadow = '0 6px 18px rgba(0,0,0,0.12)';
+                            b.style.cursor = 'pointer';
+                            b.title = 'Visitor count source (click to refresh)';
+                            b.addEventListener('click', ()=>{ incAndShow(); });
+                            document.body.appendChild(b);
+                            return b;
+                        }
+
+                        // run on load
+                        if(document.readyState === 'complete' || document.readyState === 'interactive') setTimeout(incAndShow, 300);
+                        else document.addEventListener('DOMContentLoaded', incAndShow);
+
+                        // expose an admin helper to refresh visits
+                        window.__refreshVisits = incAndShow;
+                    })();
+                </script>
+</body>
+</html>
